@@ -1,0 +1,42 @@
+/* Modern Input Styling */
+.input-group-modern {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    padding: 0 15px;
+}
+
+.input-group-modern:focus-within {
+    background: #ffffff;
+    border-color: var(--ppi-info);
+    box-shadow: 0 10px 20px rgba(13, 202, 240, 0.1);
+}
+
+.input-group-modern .icon {
+    color: #adb5bd;
+    margin-right: 12px;
+    transition: color 0.3s;
+}
+
+.input-group-modern:focus-within .icon {
+    color: var(--ppi-info);
+}
+
+.form-control-modern, .form-select-modern {
+    background: transparent;
+    border: none;
+    padding: 15px 0;
+    width: 100%;
+    color: #333;
+    font-weight: 500;
+    outline: none;
+}
+
+.form-select-modern {
+    cursor: pointer;
+    appearance: none;
+}

@@ -1,0 +1,36 @@
+/* Glassmorphism for Modal */
+.glass-modal {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(15px);
+    border-radius: 30px !important;
+}
+
+.modal-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    background: rgba(13, 202, 240, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Uhuishaji unapoingia (Entry Animation) */
+#welcomeModal.fade .modal-dialog {
+    transform: scale(0.8);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#welcomeModal.show .modal-dialog {
+    transform: scale(1);
+}
+
+/* Modal Animation */
+.modal.fade .modal-dialog {
+    transform: scale(0.9);
+    transition: transform 0.3s ease-out;
+}
+.modal.show .modal-dialog {
+    transform: scale(1);
+}

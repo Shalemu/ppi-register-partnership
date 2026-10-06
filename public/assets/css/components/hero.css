@@ -1,0 +1,122 @@
+/* HERO & SLIDER */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0a;
+    width: 100%;
+}
+
+.carousel-item {
+    min-height: 90vh;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    display: flex;
+    align-items: center;
+}
+
+/* Animation kwa maandishi ya slider */
+.carousel-item.active h1 { animation: fadeInUp 0.8s forwards; }
+.carousel-item.active p { animation: fadeInUp 1.2s forwards; }
+.carousel-item.active .btn { animation: fadeInUp 1.5s forwards; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ANIMATIONS & SHAPES */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+.float-element { animation: float 5s ease-in-out infinite; }
+
+.custom-shape-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+}
+.custom-shape-divider svg { fill: #ffffff; }
+
+/* GLASSMORPHISM */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+/* Ken Burns Effect (Zoom-in background) */
+.ken-burns-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: transform 7s ease-out;
+    transform: scale(1);
+}
+
+.carousel-item.active .ken-burns-bg {
+    transform: scale(1.15); /* Inajivuta taratibu wakati slide ipo active */
+}
+
+/* Vertical Sidebar Indicators */
+.vertical-indicators {
+    flex-direction: column;
+    left: auto;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+.vertical-indicators button {
+    width: 40px !important;
+    height: 40px !important;
+    text-indent: 0 !important;
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 50%;
+    margin: 8px 0 !important;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.vertical-indicators button.active {
+    background: var(--ppi-info) !important;
+    border-color: var(--ppi-info) !important;
+    transform: scale(1.2);
+}
+
+/* Content Staggered Animations */
+.anim-1, .anim-2, .anim-3, .anim-4, .anim-img {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.carousel-item.active .anim-1 { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.carousel-item.active .anim-2 { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+.carousel-item.active .anim-3 { opacity: 1; transform: translateY(0); transition-delay: 0.7s; }
+.carousel-item.active .anim-4 { opacity: 1; transform: translateY(0); transition-delay: 0.9s; }
+.carousel-item.active .anim-img { opacity: 1; transform: scale(1); transition-delay: 1.1s; }
+
+/* Image Style */
+.hero-floating-img {
+    border-radius: 50px 20px 50px 20px;
+    border: 8px solid rgba(13, 202, 240, 0.1);
+    transform: scale(0.8);
+}

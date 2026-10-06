@@ -1,0 +1,55 @@
+/* GLOBAL & ROOTS */
+:root {
+    --ppi-info: #0dcaf0;
+    --ppi-dark: #212529;
+    --ppi-gradient: linear-gradient(45deg, #0dcaf0, #00b4d8);
+}
+
+/* GLOBAL FONT */
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 15px;
+}
+
+/* SPECIFIC SIZES */
+h1 {
+    font-size: 3rem;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 2.3rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+/* PARAGRAPH */
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.05rem;
+
+}
+
+/* BUTTONS */
+a.btn-primary,
+a.btn-outline,
+a.btn-donate {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}

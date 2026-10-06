@@ -1,0 +1,39 @@
+/* BUTTONS & UTILITIES */
+.btn-info-ppi {
+    background: var(--ppi-gradient);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(13, 202, 240, 0.3);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-info-ppi:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(13, 202, 240, 0.5);
+    color: white;
+}
+
+.text-info-ppi { color: var(--ppi-info) !important; }
+.bg-info-ppi { background-color: var(--ppi-info) !important; }
+
+.text-gradient {
+    background: linear-gradient(90deg, #0dcaf0, #0091ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ls-1 { letter-spacing: 1px; }
+
+.tracking-widest {
+    font-size: 0.8rem;
+}
+
+.shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
