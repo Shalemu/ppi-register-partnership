@@ -1030,7 +1030,7 @@
             >
 
                 @csrf
-
+                <input type="hidden" name="type" value="membership">
 
                 {{-- ==================================
                      STEP 1

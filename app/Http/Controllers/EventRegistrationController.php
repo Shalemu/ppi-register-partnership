@@ -39,10 +39,10 @@ public function index()
 
    public function store(Request $request)
 {
-    $type = $request->input('type');
-
-    // For the simplified PPI membership form, accept these fields and validate
+    // This form does not post a type from the UI, so we assign a default
+    // to satisfy the NOT NULL `type` column in event_registrations.
     $data = $request->validate([
+        'type' => 'nullable|string',
         'child_full_name' => 'required|string',
         'dob' => 'nullable|date',
         'age' => 'nullable|integer',
@@ -64,7 +64,7 @@ public function index()
         'emergency_phone' => 'nullable|string',
     ]);
 
-   
+    $data['type'] = $request->input('type', 'membership');
     $data['agreement'] = $request->boolean('agreement');
 
         // convert arrays
@@ -78,7 +78,7 @@ public function index()
 
     EventRegistration::create($data);
 
-    return back()->with('success', 'Registration submitted successfully!');
+    return back()->with('success', 'Usajili umefanikiwa!');
 }
 
 
