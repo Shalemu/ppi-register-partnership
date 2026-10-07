@@ -67,13 +67,21 @@ public function index()
     $data['type'] = $request->input('type', 'membership');
     $data['agreement'] = $request->boolean('agreement');
 
-        // convert arrays
-    if (isset($data['support_type'])) {
-        $data['support_type'] = json_encode($data['support_type']);
-    }
+    // Map the simplified membership form fields to the event_registrations schema.
+    $data['full_name'] = $request->input('child_full_name');
+    $data['phone'] = $request->input('parent_phone');
+    $data['email'] = $request->input('parent_email');
+    $data['gender'] = $request->input('gender');
+    $data['dob'] = $request->input('dob');
+    $data['school'] = $request->input('school');
+    $data['motivation'] = $request->input('aspiration');
+    $data['experience'] = $request->input('talent');
+    $data['organization'] = $request->input('relationship');
+    $data['message'] = $request->input('consent');
+    $data['parental_consent'] = $request->input('consent');
 
-    if (isset($data['volunteer_roles'])) {
-        $data['volunteer_roles'] = json_encode($data['volunteer_roles']);
+    if ($request->has('interests')) {
+        $data['support_type'] = json_encode($request->input('interests', []));
     }
 
     EventRegistration::create($data);
